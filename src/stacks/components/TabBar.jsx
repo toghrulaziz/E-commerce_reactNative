@@ -1,5 +1,9 @@
 import HomeIcon from '@icons/home-menu.svg';
 import HomeActiveIcon from '@icons/home-active-menu.svg';
+import BagIcon from '@icons/Bag.svg'
+import BagActiveIcon from '@icons/Bag-active.svg'
+import FavoritesIcon from '@icons/Vector.svg'
+import FavoritesActiveIcon from '@icons/Vector-active.svg'
 import ProfileIcon from '@icons/user-menu.svg';
 import ProfileActiveIcon from '@icons/user-active-menu.svg';
 import '@locales/index';
@@ -33,10 +37,14 @@ const TabBar = ({state, descriptors, navigation}) => {
 
         let icon;
 
-        if (label === t('.menuHome')) {
+        if (label === t('Home')) {
           icon = isFocused ? <HomeActiveIcon /> : <HomeIcon />;
-        } else if (label === t('.menuProfile')) {
+        } else if (label === t('Profile')) {
           icon = isFocused ? <ProfileActiveIcon /> : <ProfileIcon />;
+        } else if (label === t('Basket')) {
+          icon = isFocused ? <BagActiveIcon /> : <BagIcon />;
+        } else if (label === t('Favorites')) {
+          icon = isFocused ? <FavoritesActiveIcon /> : <FavoritesIcon />;
         }
 
         const onPress = () => {

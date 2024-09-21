@@ -9,15 +9,18 @@ import '@locales/index';
 import {useTranslation} from 'react-i18next';
 import {FlatList} from 'react-native';
 import { logout } from '../../../utils/authUtils';
+import TermsConditions from "@icons/termsConditions.svg"
+import PrivacyPolicy from "@icons/PrivacyPolicy.svg"
+import Settings from "@icons/Settings.svg"
 
 const Profile = () => {
   const navigation = useNavigation();
-  const {t} = useTranslation();
+  // const {t} = useTranslation();
 
   const menuItems = [
     {
-      // logo: <DocsIcon />,
-      title: t('.termsAndConditions'),
+      logo: <TermsConditions />,
+      title: 'Terms And Conditions',
       route: 'WebViewScreen',
       // Add if url exists for TermsConditions or PrivacyPolicy pages
       payload: {
@@ -26,14 +29,14 @@ const Profile = () => {
       },
     },
     {
-      // logo: <LockIcon />,
-      title: t('.privacyPolicy'),
+      logo: <PrivacyPolicy />,
+      title: 'Privacy and Policy',
       route: 'WebViewScreen',
     },
 
     {
-      // logo: <SettingsIcon />,
-      title: t('.Settings'),
+      logo: <Settings />,
+      title: 'Settings',
       route: 'Settings',
     },
   ];

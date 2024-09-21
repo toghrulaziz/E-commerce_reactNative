@@ -63,7 +63,8 @@ const Navigation = () => {
 
   return connected === true ? (
     <NavigationContainer linking={linking}>
-      {accessToken ? <TabStack /> : <AuthStack />}
+      {/* {accessToken ? <TabStack /> : <AuthStack />} */}
+      {accessToken ? <TabStack /> : <TabStack />}
     </NavigationContainer>
   ) : (
     <NoInternet />
